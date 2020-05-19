@@ -91,7 +91,7 @@ async def convert_to_video(bot, update):
                     os.path.dirname(the_real_download_location),
                     random.randint(
                         0,
-                        duration - 1
+                        duration + 10
                     )
                 )
             logger.info(thumb_image_path)
