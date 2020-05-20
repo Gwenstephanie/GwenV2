@@ -34,7 +34,7 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["converttovideo"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["convert2video"]))
 async def convert_to_video(bot, update):
     if update.from_user.id not in Config.AUTH_USERS:
         await bot.delete_messages(
@@ -91,7 +91,7 @@ async def convert_to_video(bot, update):
                     os.path.dirname(the_real_download_location),
                     random.randint(
                         0,
-                        duration + 10
+                        duration - 1
                     )
                 )
             logger.info(thumb_image_path)
