@@ -32,7 +32,7 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["converttoaudio"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["converttofile"]))
 async def convert_to_audio(bot, update):
     if update.from_user.id not in Config.AUTH_USERS:
         await bot.delete_messages(
@@ -41,7 +41,7 @@ async def convert_to_audio(bot, update):
             revoke=True
         )
         return
-    TRChatBase(update.from_user.id, update.text, "converttoaudio")
+    TRChatBase(update.from_user.id, update.text, "converttofile")
     if (update.reply_to_message is not None) and (update.reply_to_message.media is not None) :
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
