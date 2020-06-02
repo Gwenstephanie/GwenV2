@@ -237,7 +237,6 @@ async def ddl_call_back(bot, update):
             end_two = datetime.now()
             try:
                 os.remove(download_directory)
-                os.remove(thumb_image_path)
             except:
                 pass
             time_taken_for_download = (end_one - start).seconds
