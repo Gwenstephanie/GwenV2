@@ -22,6 +22,7 @@ from translation import Translation
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
+from pyrogram import Client, Filters
 
 from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
@@ -34,7 +35,7 @@ from PIL import Image
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
 async def rename_doc(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
+    if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
@@ -79,20 +80,13 @@ async def rename_doc(bot, update):
                 )
             except:
                 pass
-            if "IndianMovie" in the_real_download_location:
-                await bot.edit_message_text(
-                    text=Translation.RENAME_403_ERR,
-                    chat_id=update.chat.id,
-                    message_id=a.message_id
-                )
-                return
             new_file_name = download_location + file_name
             os.rename(the_real_download_location, new_file_name)
-            # await bot.edit_message_text(
-            #     text=Translation.UPLOAD_START,
-            #     chat_id=update.chat.id,
-            #     message_id=a.message_id
-            # )
+            await bot.edit_message_text(
+                text=Translation.UPLOAD_START,
+                chat_id=update.chat.id,
+                message_id=a.message_id
+                )
             logger.info(the_real_download_location)
             thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
             if not os.path.exists(thumb_image_path):
