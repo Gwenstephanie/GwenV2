@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
 
 # the logging things
 import logging
@@ -36,11 +33,11 @@ from PIL import Image
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["converttovideo"]))
 async def convert_to_video(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
-        await bot.delete_messages(
+    if update.from_user.id in Config.BANNED_USERS:
+        await bot.send_message(
             chat_id=update.chat.id,
-            message_ids=update.message_id,
-            revoke=True
+            text=Translation.BANNED_USER_TEXT,
+            reply_to_message_id=update.message_id
         )
         return
     TRChatBase(update.from_user.id, update.text, "converttovideo")
@@ -64,17 +61,17 @@ async def convert_to_video(bot, update):
             )
         )
         if the_real_download_location is not None:
-            await bot.edit_message_text(
+            bot.edit_message_text(
                 text=Translation.SAVED_RECVD_DOC_FILE,
                 chat_id=update.chat.id,
                 message_id=a.message_id
             )
             # don't care about the extension
-            await bot.edit_message_text(
-                text=Translation.UPLOAD_START,
-                chat_id=update.chat.id,
-                message_id=a.message_id
-            )
+           # await bot.edit_message_text(
+              #  text=Translation.UPLOAD_START,
+             #   chat_id=update.chat.id,
+            #    message_id=a.message_id
+          #  )
             logger.info(the_real_download_location)
             # get the correct width, height, and duration for videos greater than 10MB
             # ref: message from @BotSupport
@@ -134,7 +131,7 @@ async def convert_to_video(bot, update):
             )
             try:
                 os.remove(the_real_download_location)
-                os.remove(thumb_image_path)
+              #  os.remove(thumb_image_path)
             except:
                 pass
             await bot.edit_message_text(
