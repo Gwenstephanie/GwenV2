@@ -1,15 +1,10 @@
 class Translation(object):
-    START_TEXT = """Hi, Am  Gwen's V2.0 Bot..
-      
-Am a Simple bot for Direct Links to TGfile/Streaming Video with Custom Thumbnail Support 😎
-
-☛  Do one By One . Otherwise you will get Permenent Ban
-
-☛ Send - url | New Name.Extension
-
-☛My Support Group&Channel:© @ModzillaGroup | @Modzilla
-                   
-☛ /help for more details..."""
+    START_TEXT = """Hi, I'm A <b>Multipurpose Bot..</b>
+Am a Multipurpose Bot Which Supports Alot Of Functions 🤖
+🍁 Do One By One. Otherwise You Will Get Permanently Bannned
+🍁 Send URL | New Name.Extension
+🍁 /help For More Details...
+\n🍁 Supoort © @Modzilla @LeechZone"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = "No Charges Incurred, Join Our Channel >> <a href='https://t.me/Modzilla'>CHANNEL LINK</a>"
@@ -38,17 +33,15 @@ URL | filename | username | password"""
 Telegram ID: <code>{}</code>
 Plan name: <a href='https://t.me/SpEcHlDe/599'>{}</a>
 Expires on: {}"""
-    HELP_USER = """There Are Multiple Things I can do:
-👉 Download Youtube Videos And All Direct Link Also With Custom File Name ( Link | Filename.NameOfExtension )
-👉 Upload As File From Any HTTP link, With Custom Thumbnail Support( Link | Filename.NameOfExtension )
-👉 Convert To Streamable Video, Any Telegram File To Streamble Video Reply To File As /converttovideo
-👉 Convert To Telegram File, The media Sent As Telegram Documents Reply To File As /converttofile
-👉 Rename Telegram files, with Custom Thumbnail Support Reply To File As /Rename FileName.Nameextention
-👉 Trim Large Videos Reply To File As /Trim hh:mm:ss hh:mm:ss , And Take Screenshotsof Telegram Media Files Reply To File As /Trim hh:mm:ss 
-👉 Extract Compressed Telegram Media Reply To File As /unzip Reply To File
-👉 Get A Telegram Sticker As Telegram Downloadable Media Simple Send Sticker It Will Generate
-
-Support © @Modzilla @LeechZone"""
+    HELP_USER = """There Are Multiple Things I Can Do:
+🍁 Upload As File From Any HTTP link, With Custom Thumbnail Support( Link | Filename.NameOfExtension )
+🍁 Convert To Streamable Video, Any Telegram File To Streamble Video Reply To File As /converttovideo
+🍁 Convert To Telegram File, The media Sent As Telegram Documents Reply To File As /converttofile
+🍁 Rename Telegram files, with Custom Thumbnail Support Reply To File As /Rename FileName.extension
+🍁 Trim Large Videos Reply To File As /Trim hh:mm:ss hh:mm:ss
+🍁 Take Screenshots of Telegram Media Files Reply To File As /Trim hh:mm:ss 
+🍁 Get A Telegram Sticker As Telegram Downloadable Media Simple Send Sticker It Will Generate
+\nSupport © @Modzilla @LeechZone"""
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
     REPLY_TO_DOC_FOR_SCSS = "Reply to a Telegram media to get screenshots"
