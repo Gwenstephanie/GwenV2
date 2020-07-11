@@ -38,39 +38,17 @@ URL | filename | username | password"""
 Telegram ID: <code>{}</code>
 Plan name: <a href='https://t.me/SpEcHlDe/599'>{}</a>
 Expires on: {}"""
-    HELP_USER = """How To Use Me🤔
-    
-👉 𝗛𝗼𝘄 𝗧𝗼 𝗗𝗶𝗿𝗲𝗰𝘁 𝗨𝗽𝗹𝗼𝗮𝗱 𝗙𝗶𝗹𝗲/𝗩𝗶𝗱𝗲𝗼​
+    HELP_USER = """There Are Multiple Things I can do:
+👉 Download Youtube Videos And All Direct Link Also With Custom File Name ( Link | Filename.NameOfExtension )
+👉 Upload As File From Any HTTP link, With Custom Thumbnail Support( Link | Filename.NameOfExtension )
+👉 Convert To Streamable Video, Any Telegram File To Streamble Video Reply To File As /converttovideo
+👉 Convert To Telegram File, The media Sent As Telegram Documents Reply To File As /converttofile
+👉 Rename Telegram files, with Custom Thumbnail Support Reply To File As /Rename FileName.Nameextention
+👉 Trim Large Videos Reply To File As /Trim hh:mm:ss hh:mm:ss , And Take Screenshotsof Telegram Media Files Reply To File As /Trim hh:mm:ss 
+👉 Extract Compressed Telegram Media Reply To File As /unzip Reply To File
+👉 Get A Telegram Sticker As Telegram Downloadable Media Simple Send Sticker It Will Generate
 
-1. Send url (Link|New Name with Extension)
-2. Send Custom Thumbnail (Optional)
-3. Select the button
-    ● SVideo - Give File as video with Screenshots.
-    ● DFile  - Give File with Screenshots
-    ● Video  - Give File as video without Screenshots]
-
-👉 𝗛𝗼𝘄 𝗧𝗼 𝗥𝗲𝗻𝗮𝗺𝗲 𝗙𝗶𝗹𝗲𝘀​
-
-1. Send/Forward TG File
-2. Reply /rename (New Name with Extension)
-3. Send Custom Thumbnail
-
-👉 𝗛𝗼𝘄 𝗧𝗼 𝗖𝗼𝗻𝘃𝗲𝗿𝘁 𝗙𝗶𝗹𝗲 𝗧𝗼 𝗩𝗶𝗱𝗲𝗼​
-
-1. Send/Forward TG File (.mp4 | .mkv File)
-2. Reply /converttovideo
-3. Reply /converttofile
-3. Send Custom Thumbnail
-
-👉 𝗛𝗼𝘄 𝗧𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗩𝗶𝗱𝗲𝗼𝘀​
-
-1. Send/Forward YouTube Link
-2. Select the button
-    ● SVideo - Give File as video
-    ● DFile  - Give File
-    ● MP3  - Give File as Audio
-
-Support Group/Channel : @ModzillaGroup | @Modzilla"""
+Support © @Modzilla @LeechZone"""
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
     REPLY_TO_DOC_FOR_SCSS = "Reply to a Telegram media to get screenshots"
