@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
 
 # the logging things
 import logging
@@ -9,6 +6,7 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 
 import os
+import random
 import time
 
 # the secret configuration specific things
@@ -33,16 +31,16 @@ from PIL import Image
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["converttofile"]))
-async def convert_to_audio(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
-        await bot.delete_messages(
+async def convert_to_video(bot, update):
+    if update.from_user.id in Config.BANNED_USERS:
+        await bot.send_message(
             chat_id=update.chat.id,
-            message_ids=update.message_id,
-            revoke=True
+            text=Translation.BANNED_USER_TEXT,
+            reply_to_message_id=update.message_id
         )
         return
     TRChatBase(update.from_user.id, update.text, "converttofile")
-    if (update.reply_to_message is not None) and (update.reply_to_message.media is not None) :
+    if update.reply_to_message is not None:
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
@@ -62,19 +60,17 @@ async def convert_to_audio(bot, update):
             )
         )
         if the_real_download_location is not None:
-            await bot.edit_message_text(
+            bot.edit_message_text(
                 text=Translation.SAVED_RECVD_DOC_FILE,
                 chat_id=update.chat.id,
                 message_id=a.message_id
             )
             # don't care about the extension
-            # convert video to audio format
-            audio_file_location_path = the_real_download_location
-            await bot.edit_message_text(
-                text=Translation.UPLOAD_START,
-                chat_id=update.chat.id,
-                message_id=a.message_id
-            )
+           # await bot.edit_message_text(
+              #  text=Translation.UPLOAD_START,
+             #   chat_id=update.chat.id,
+            #    message_id=a.message_id
+          #  )
             logger.info(the_real_download_location)
             # get the correct width, height, and duration for videos greater than 10MB
             # ref: message from @BotSupport
@@ -87,46 +83,25 @@ async def convert_to_audio(bot, update):
             thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
             if not os.path.exists(thumb_image_path):
                 thumb_image_path = None
-            else:
-                metadata = extractMetadata(createParser(thumb_image_path))
-                if metadata.has("width"):
-                    width = metadata.get("width")
-                if metadata.has("height"):
-                    height = metadata.get("height")
-                # get the correct width, height, and duration for videos greater than 10MB
-                # resize image
-                # ref: https://t.me/PyrogramChat/44663
-                # https://stackoverflow.com/a/21669827/4723940
-                Image.open(thumb_image_path).convert("RGB").save(thumb_image_path)
-                img = Image.open(thumb_image_path)
-                # https://stackoverflow.com/a/37631799/4723940
-                # img.thumbnail((90, 90))
-                img.resize((90, height))
-                img.save(thumb_image_path, "JPEG")
-                # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             # try to upload file
             c_time = time.time()
-            await bot.send_audio(
+            await bot.send_document(
                 chat_id=update.chat.id,
-                audio=audio_file_location_path,
+                document=the_real_download_location,
                 caption=description,
-                duration=duration,
-                # performer="",
-                # title="",
                 # reply_markup=reply_markup,
                 thumb=thumb_image_path,
                 reply_to_message_id=update.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
                     Translation.UPLOAD_START,
-                    a, 
+                    a,
                     c_time
                 )
             )
             try:
-                os.remove(thumb_image_path)
                 os.remove(the_real_download_location)
-                os.remove(audio_file_location_path)
+              #  os.remove(thumb_image_path)
             except:
                 pass
             await bot.edit_message_text(
