@@ -12,13 +12,13 @@ Am a Simple bot for Direct Links to TGfile/Streaming Video with Custom Thumbnail
 ☛ /help for more details..."""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
-    UPGRADE_TEXT = "No Charges Incurred, Join Our Channel >> <a href='https://t.me/modzilla'>CHANNEL LINK</a>"
+    UPGRADE_TEXT = "No Charges Incurred, Join Our Channel >> <a href='https://t.me/Modzilla'>CHANNEL LINK</a>"
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
 URL | filename | username | password"""
     NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    DOWNLOAD_START = "Downloading..."
-    UPLOAD_START = "Uploading..."
+    DOWNLOAD_START = "<b>Downloading Into My Directory 📁</b> \n<code>Please Wait While It Completes..</code>"
+    UPLOAD_START = "<b>Uploading To Telegram Now ⚠..</b>"
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.5GB due to Telegram API limitations."
     AFTER_SUCCESSFUL_UPLOAD_MSG = "Thanks for using my service"
@@ -48,19 +48,20 @@ Expires on: {}"""
     ● SVideo - Give File as video with Screenshots.
     ● DFile  - Give File with Screenshots
     ● Video  - Give File as video without Screenshots]
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+
 👉 𝗛𝗼𝘄 𝗧𝗼 𝗥𝗲𝗻𝗮𝗺𝗲 𝗙𝗶𝗹𝗲𝘀​
 
 1. Send/Forward TG File
 2. Reply /rename (New Name with Extension)
 3. Send Custom Thumbnail
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+
 👉 𝗛𝗼𝘄 𝗧𝗼 𝗖𝗼𝗻𝘃𝗲𝗿𝘁 𝗙𝗶𝗹𝗲 𝗧𝗼 𝗩𝗶𝗱𝗲𝗼​
 
 1. Send/Forward TG File (.mp4 | .mkv File)
 2. Reply /converttovideo
+3. Reply /converttofile
 3. Send Custom Thumbnail
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+
 👉 𝗛𝗼𝘄 𝗧𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗩𝗶𝗱𝗲𝗼𝘀​
 
 1. Send/Forward YouTube Link
@@ -68,8 +69,6 @@ Expires on: {}"""
     ● SVideo - Give File as video
     ● DFile  - Give File
     ● MP3  - Give File as Audio
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-Send /me to know current plan details
 
 Support Group/Channel : @ModzillaGroup | @Modzilla"""
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
@@ -100,3 +99,11 @@ You can use /rename command after receiving file to rename it with custom thumbn
 Free users only 1 request per 30 minutes.
 /upgrade or Try 1800 seconds later."""
     SLOW_URL_DECED = "Gosh that seems to be a very slow URL. Since you were screwing my home, I am in no mood to download this file. Meanwhile, why don't you try this:==> https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
+    ABOUT_USER = """○ My Name : <b>Multipurpose V2 BOT</b>
+○ Creator : <a href='https://t.me/iggie/'>Iggie</a>
+○ Credits : <code>Everyone in this journey</code>
+○ Language : <a href='https://docs.pyrogram.org/'>Python3</a>
+○ Library : <code>Pyrogram asyncio 0.16.1</code>
+○ Source Code : <a href='https://t.me/GETYOUROWNSOURCE/'>👉 CLICK HERE 👈</a>
+○ Server : <code>Heroku</code>
+○ Build Status : <code>V5 [+0.4]</code>"""
