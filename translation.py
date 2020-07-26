@@ -78,3 +78,5 @@ Free users only 1 request per 30 minutes.
 ○ Source Code : <a href='https://t.me/GETYOUROWNSOURCE/'>👉 CLICK HERE 👈</a>
 ○ Server : <code>Heroku</code>
 ○ Build Status : <code>V5 [+0.4]</code>"""
+    IFLONG_FILE_NAME = """File Name limit allowed by Telegram is {alimit} characters.
+The given file name has {num} characters."""
