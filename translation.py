@@ -79,4 +79,8 @@ Free users only 1 request per 30 minutes.
 ○ Server : <code>Heroku</code>
 ○ Build Status : <code>V5 [+0.4]</code>"""
     IFLONG_FILE_NAME = """File Name limit allowed by Telegram is {alimit} characters.
-The given file name has {num} characters."""
+The given file name has {num} characters.
+
+<b>Essays Not allowed in Telegram file name!</b>
+©️ <code>@MultipurposeXBot</code>
+Please short your file name and try again!"""
