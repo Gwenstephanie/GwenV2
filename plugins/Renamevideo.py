@@ -33,7 +33,7 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["rename2video"]))
 async def rename_doc(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
@@ -42,7 +42,7 @@ async def rename_doc(bot, update):
             revoke=True
         )
         return
-    TRChatBase(update.from_user.id, update.text, "rename")
+    TRChatBase(update.from_user.id, update.text, "rename2video")
     if (" " in update.text) and (update.reply_to_message is not None):
         cmd, file_name = update.text.split(" ", 1)
         if len(file_name) > 64:
