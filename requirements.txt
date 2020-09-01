@@ -5,6 +5,6 @@ hachoir
 numpy
 Pillow
 pySmartDL
-https://github.com/Mahesh0253/pyrogram/archive/asyncio.zip
+https://github.com/Boltcloud/pyro/archive/asyncio.zip
 tgcrypto
 git+https://github.com/Gwenstephanie/youtube-dl
