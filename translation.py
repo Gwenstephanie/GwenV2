@@ -1,29 +1,23 @@
 class Translation(object):
-    START_TEXT = """Hi, I'm A <b>Multipurpose Bot..</b>
-Am a Multipurpose Bot Which Supports Alot Of Functions 🤖
-🍁 Do One By One. Otherwise You Will Get Permanently Bannned
-🍁 Send URL | New Name.Extension
-🍁 /help For More Details...
-\n🍁 Supoort © @Modzilla @LeechZone"""
+    START_TEXT = """<b>Hello, My Name Is 𝗠𝗨𝗟𝗧𝗜𝗣𝗨𝗥𝗣𝗢𝗦𝗘-𝗫-𝗕𝗢𝗧. 🥳</b>\n\n<b>I'm A <u>𝗠𝗨𝗟𝗧𝗜𝗣𝗨𝗥𝗣𝗢𝗦𝗘 𝗣𝗨𝗥𝗣𝗢𝗦𝗘 𝗕𝗢𝗧</u></b>\n\n<b>I Have Alot Of Functions Which I Can Do From Uploading Of Files Through Link To Telegram To Converting Files To Video, See /Help For More Information</b>\n\n<b><u>❌ 𝗣𝗢𝗥𝗡𝗢𝗚𝗥𝗔𝗣𝗛𝗜𝗖 𝗖𝗢𝗡𝗧𝗘𝗡𝗧𝗦</u> Are Strictly Prohibited & Will Get You Banned Permanently.</b>\n\n<b>𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 @FlixBots For More Exciting Bots</b>"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = "No Charges Incurred, Join Our Channel >> <a href='https://t.me/Modzilla'>CHANNEL LINK</a>"
-    FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
-    SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
-URL | filename | username | password"""
+    FORMAT_SELECTION = "𝗦𝗲𝗹𝗲𝗰𝘁 𝘁𝗵𝗲 𝗱𝗲𝘀𝗶𝗿𝗲𝗱 𝗳𝗼𝗿𝗺𝗮𝘁: <a href='{}'>𝗳𝗶𝗹𝗲 𝘀𝗶𝘇𝗲 𝗺𝗶𝗴𝗵𝘁 𝗯𝗲 𝗮𝗽𝗽𝗿𝗼𝘅𝗶𝗺𝗮𝘁𝗲</a> \n𝗜𝗳 𝘆𝗼𝘂 𝘄𝗮𝗻𝘁 𝘁𝗼 𝘀𝗲𝘁 𝗰𝘂𝘀𝘁𝗼𝗺 𝘁𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹, 𝘀𝗲𝗻𝗱 𝗽𝗵𝗼𝘁𝗼 𝗯𝗲𝗳𝗼𝗿𝗲 𝗼𝗿 𝗾𝘂𝗶𝗰𝗸𝗹𝘆 𝗮𝗳𝘁𝗲𝗿 𝘁𝗮𝗽𝗽𝗶𝗻𝗴 𝗼𝗻 𝗮𝗻𝘆 𝗼𝗳 𝘁𝗵𝗲 𝗯𝗲𝗹𝗼𝘄 𝗯𝘂𝘁𝘁𝗼𝗻𝘀.\n𝗬𝗼𝘂 𝗰𝗮𝗻 𝘂𝘀𝗲 /deletethumbnail 𝘁𝗼 𝗱𝗲𝗹𝗲𝘁𝗲 𝘁𝗵𝗲 𝗮𝘂𝘁𝗼-𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝘁𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹."
+    SET_CUSTOM_USERNAME_PASSWORD = """"""
     NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    DOWNLOAD_START = "<b>Downloading Into My Directory 🔎</b> \n<code>Please Wait While It Completes..</code>"
-    UPLOAD_START = "<b>Uploading To Telegram Now 📁..</b>"
+    DOWNLOAD_START = "<b>𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗜𝗻𝘁𝗼 𝗠𝘆 𝗦𝗲𝗿𝘃𝗲𝗿..</b>"
+    UPLOAD_START = "<b>𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗧𝗼 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗡𝗼𝘄..</b>"
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.5GB due to Telegram API limitations."
     AFTER_SUCCESSFUL_UPLOAD_MSG = "Thanks for using my service"
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds. \nThanks For Using This Service \nUploaded in {} seconds."
     NOT_AUTH_USER_TEXT = "Please /upgrade your subscription."
     NOT_AUTH_USER_TEXT_FILE_SIZE = "Detected File Size: {}. Free Users can only upload: {}\nPlease /upgrade your subscription.\nIf you think this is a bug, please contact <a href='https://telegram.dog/ThankTelegram'>@SpEcHlDe</a>"
-    SAVED_CUSTOM_THUMB_NAIL = "Custom video / file thumbnail saved. This image will be used in the video / file."
-    DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
-    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
-    SAVED_RECVD_DOC_FILE = "File Downloaded Successfully 📝."
+    SAVED_CUSTOM_THUMB_NAIL = "𝗖𝘂𝘀𝘁𝗼𝗺 𝗩𝗶𝗱𝗲𝗼/𝗙𝗶𝗹𝗲 𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 𝗜𝘀 𝗦𝗮𝘃𝗲𝗱. 𝗧𝗵𝗶𝘀 𝗜𝗺𝗮𝗴𝗲 𝗪𝗶𝗹𝗹 𝗕𝗲 𝗨𝘀𝗲𝗱 𝗜𝗻 𝗬𝗼𝘂𝗿 𝗡𝗲𝘅𝘁 𝗨𝗽𝗹𝗼𝗮𝗱 📁."
+    DEL_ETED_CUSTOM_THUMB_NAIL = "𝗖𝘂𝘀𝘁𝗼𝗺 𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 𝗖𝗹𝗲𝗮𝗿𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 ❌."
+    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "Media Cleared Succesfully ❌."
+    SAVED_RECVD_DOC_FILE = "𝗗𝗼𝗰𝘂𝗺𝗲𝗻𝘁 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 📁."
     CUSTOM_CAPTION_UL_FILE = " "
     NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom ThumbNail found."
     NO_VOID_FORMAT_FOUND = "no-one gonna help you\n<b>YouTubeDL</b> said: {}"
@@ -70,14 +64,14 @@ You can use /rename command after receiving file to rename it with custom thumbn
 Free users only 1 request per 30 minutes.
 /upgrade or Try 1800 seconds later."""
     SLOW_URL_DECED = "Gosh that seems to be a very slow URL. Since you were screwing my home, I am in no mood to download this file. Meanwhile, why don't you try this:==> https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    ABOUT_USER = """○ My Name : <b>Multipurpose V2 BOT</b>
-○ Creator : <a href='https://t.me/iggie/'>Iggie</a>
-○ Credits : <code>Everyone in this journey</code>
-○ Language : <a href='https://docs.pyrogram.org/'>Python3</a>
-○ Library : <code>Pyrogram asyncio 0.16.1</code>
-○ Source Code : <a href='https://t.me/GETYOUROWNSOURCE/'>👉 CLICK HERE 👈</a>
-○ Server : <code>Heroku</code>
-○ Build Status : <code>V5 [+0.4]</code>"""
+    ABOUT_USER = """<b>○ My Name : 𝗠𝗨𝗟𝗧𝗜𝗣𝗨𝗥𝗣𝗢𝗦𝗘 𝗫 𝗕𝗢𝗧</b>
+<b>○ Creator :</b> <a href='https://t.me/iggie/'>Iggie</a>
+<b>○ Credits :</b> <code>Everyone in this journey</code>
+<b>○ Language :</b> <a href='https://docs.pyrogram.org/'>Python3</a>
+<b>○ Library :</b> <code>Pyrogram asyncio 0.16.1</code>
+<b>○ Source Code :</b> <a href='https://t.me/NOSOURCECODE/'>👉 CLICK HERE 👈</a>
+<b>○ Server :</b> <code>Heroku</code>
+<b>○ Build Status :</b> <code>V5 [+0.4]</code>"""
     IFLONG_FILE_NAME = """File Name limit allowed by Telegram is {alimit} characters.
 The given file name has {num} characters.
 
