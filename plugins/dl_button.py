@@ -269,7 +269,7 @@ async def download_coroutine(bot, session, url, file_name, chat_id, message_id, 
             message_id,
             text="""<b>○ 𝗜𝗻𝗶𝘁𝗶𝗮𝘁𝗶𝗻𝗴 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱</b>
 <b>○ 𝗟𝗶𝗻𝗸 :</b> {}
-<b>○ 𝗦𝗶𝘇𝗲 :</b> {}<b>\n\n𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗙𝗼𝗿 𝗨𝗽𝗱𝗮𝘁𝗲𝘀 @FlixBots</b>""".format(url, humanbytes(total_length))
+<b>○ 𝗦𝗶𝘇𝗲 :</b> {}""".format(url, humanbytes(total_length))
         )
         with open(file_name, "wb") as f_handle:
             while True:
