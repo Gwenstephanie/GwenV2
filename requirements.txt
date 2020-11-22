@@ -7,4 +7,4 @@ Pillow
 pySmartDL
 https://github.com/Mahesh0253/pyrogram/archive/asyncio.zip
 tgcrypto
-https://github.com/ravidkumar/youtube-dl
+git+https://github.com/ytdl-org/youtube-dl
