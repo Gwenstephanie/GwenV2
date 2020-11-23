@@ -240,11 +240,11 @@ async def echo(bot, update):
                 "video", format_id, format_ext)
             inline_keyboard.append([
                 pyrogram.InlineKeyboardButton(
-                    "SVideo",
+                    "𝗦𝗧𝗥𝗘𝗔𝗠𝗔𝗕𝗟𝗘 📽️",
                     callback_data=(cb_string_video).encode("UTF-8")
                 ),
                 pyrogram.InlineKeyboardButton(
-                    "DFile",
+                    "𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧 📃",
                     callback_data=(cb_string_file).encode("UTF-8")
                 )
             ])
@@ -254,11 +254,11 @@ async def echo(bot, update):
                 "video", format_id, format_ext)
             inline_keyboard.append([
                 pyrogram.InlineKeyboardButton(
-                    "video",
+                    "𝗩𝗜𝗗𝗘𝗢 🎬",
                     callback_data=(cb_string_video).encode("UTF-8")
                 ),
                 pyrogram.InlineKeyboardButton(
-                    "file",
+                    "𝗙𝗜𝗟𝗘 📄",
                     callback_data=(cb_string_file).encode("UTF-8")
                 )
             ])
