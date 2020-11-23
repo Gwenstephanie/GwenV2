@@ -4,7 +4,8 @@ git+git://github.com/google/chatbase-python.git
 hachoir
 numpy
 Pillow
-pySmartDL
-https://github.com/Mahesh0253/pyrogram/archive/asyncio.zip
+https://github.com/mahesh0253/pyrogram/archive/asyncio.zip
+requests
 tgcrypto
-git+https://github.com/ytdl-org/youtube-dl
+youtube-dl
+olefile
