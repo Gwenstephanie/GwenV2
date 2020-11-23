@@ -15,8 +15,8 @@
     "uploader"
   ],
   "success_url": "https://telegram.dog/AnyDLBot",
-  "website": "https://github.com/RomanGoddess/MultiPurposeBot",
-  "repository": "https://github.com/RomanGoddess/MultiPurposeBot",
+  "website": "https://github.com/RomanGoddess/MultiPurposeXBot",
+  "repository": "https://github.com/RomanGoddess/MultiPurposeXBot",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
