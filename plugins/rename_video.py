@@ -35,7 +35,7 @@ from PIL import Image
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["renamevideo"]))
 async def rename_video(bot, update):
-    if update.from_user.id in Config.BANNED_USERS:
+    if update.from_user.id in Config.AUTH_USERS:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
