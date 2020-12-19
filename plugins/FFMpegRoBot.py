@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 import os
 import time
+import asyncio
 
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
@@ -33,6 +34,26 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 
 
+async def run_subprocess(cmd):
+    process = await asyncio.create_subprocess_exec(
+        *cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    return await process.communicate()
+
+
+async def generate_thumbnail_file(file_path):
+    output_folder = f'Thumbnails/'
+    os.makedirs(output_folder, exist_ok=True)
+    thumb_file = output_folder.joinpath(f'thumb_{time.time()}.jpg')
+    ffmpeg_cmd = ['ffmpeg', '-ss', '0', '-i', file_path, '-vframes', '1', '-vf', 'scale=320:-1', '-y', str(thumb_file)]
+    await run_subprocess(ffmpeg_cmd)
+    if not os.path.exists(thumb_file):
+        return None
+    return thumb_file
+
+
 @pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
 async def trim(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
@@ -47,8 +68,8 @@ async def trim(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
-               return
+                await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
@@ -81,6 +102,7 @@ async def trim(bot, update):
                     text=Translation.UPLOAD_START,
                     message_id=a.message_id
                 )
+                thumbnail = await generate_thumbnail_file(o)
                 c_time = time.time()
                 await bot.send_video(
                     chat_id=update.chat.id,
@@ -91,7 +113,7 @@ async def trim(bot, update):
                     # height=height,
                     supports_streaming=True,
                     # reply_markup=reply_markup,
-                    # thumb=thumb_image_path,
+                    thumb=thumbnail,
                     reply_to_message_id=update.message_id,
                     progress=progress_for_pyrogram,
                     progress_args=(
@@ -182,8 +204,8 @@ async def storage_info(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
-               return
+                await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
@@ -231,8 +253,8 @@ async def clear_media(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
-               return
+                await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
@@ -256,7 +278,7 @@ async def clear_media(bot, update):
     )
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["downloadmedia"]))
+@pyrogram.Client.on_message(pyrogram.Filters.document | pyrogram.Filters.video)
 async def download_media(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
@@ -270,8 +292,8 @@ async def download_media(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
-               return
+                await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
@@ -295,7 +317,7 @@ async def download_media(bot, update):
         try:
             c_time = time.time()
             await bot.download_media(
-                message=update.reply_to_message,
+                message=update,
                 file_name=saved_file_path,
                 progress=progress_for_pyrogram,
                 progress_args=(
