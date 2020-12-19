@@ -27,15 +27,21 @@ class Translation(object):
 Telegram ID: <code>{}</code>
 Plan name: <a href='https://t.me/SpEcHlDe/599'>{}</a>
 Expires on: {}"""
-    HELP_USER = """There Are Multiple Things I Can Do:
-🍁 Upload As File From Any HTTP link, With Custom Thumbnail Support( Link | Filename.NameOfExtension )
-🍁 Convert To Streamable Video, Any Telegram File To Streamble Video Reply To File As /converttovideo
-🍁 Convert To Telegram File, The media Sent As Telegram Documents Reply To File As /converttofile
-🍁 Rename Telegram files, with Custom Thumbnail Support Reply To File As /Rename FileName.extension
-🍁 Trim Large Videos Reply To File As /Trim hh:mm:ss hh:mm:ss
-🍁 Take Screenshots of Telegram Media Files Reply To File As /Trim hh:mm:ss 
-🍁 Get A Telegram Sticker As Telegram Downloadable Media Simple Send Sticker It Will Generate
-\nSupport © @Modzilla @LeechZone"""
+    HELP_USER = """<b><u>More Help & Commands!</u>
+
+<u>Trimming Telegram Videos</u>
+➠ Send Me Any Telegram File Or Video.
+➠ Reply To That Message With /downloadmedia.
+➠ Wait For It To Get Completed.
+➠ Once Completed Send /trim [start time] [finish time]
+➠ Example /trim 00:10:00 00:15:00
+
+<u>Generating Screenshots For TG Files</u>
+➠ Reply /screenshot To To The Telegram File.
+➠ Wait For It To Get Completed
+➠ Bot Will Instantly Generate 10 Random Screenshots From The Video Sent.
+
+𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 @FlixBots For More Exciting Bots</b>"""
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
     REPLY_TO_DOC_FOR_SCSS = "Reply to a Telegram media to get screenshots"
@@ -51,7 +57,6 @@ Expires on: {}"""
     ERR_ONLY_TWO_MEDIA_IN_ALBUM = "Media Album should contain only two photos. Please re-send the media album, and then try again, or send only two photos in an album."
     INVALID_UPLOAD_BOT_URL_FORMAT = "URL format is incorrect. make sure your url starts with either http:// or https://. You can set custom file name using the format link | file_name.extension"
     ABUSIVE_USERS = "You are not allowed to use this bot. If you think this is a mistake, please check /me to remove this restriction."
-    FF_MPEG_RO_BOT_AD_VER_TISE_MENT = "https://telegram.dog/FFMpegRoBot"
     EXTRACT_ZIP_INTRO_ONE = "Send a compressed file first, Then reply /unzip command to the file."
     EXTRACT_ZIP_INTRO_THREE = "Analyzing received file. ⚠️ This might take some time. Please be patient. "
     UNZIP_SUPPORTED_EXTENSIONS = ("zip", "rar")
