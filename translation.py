@@ -1,5 +1,5 @@
 class Translation(object):
-    START_TEXT = """<b>Hello, My Name Is 𝗠𝗨𝗟𝗧𝗜𝗣𝗨𝗥𝗣𝗢𝗦𝗘-𝗫-𝗕𝗢𝗧. 🥳</b>\n\n<b>I'm A <u>𝗠𝗨𝗟𝗧𝗜𝗣𝗨𝗥𝗣𝗢𝗦𝗘 𝗣𝗨𝗥𝗣𝗢𝗦𝗘 𝗕𝗢𝗧</u></b>\n\n<b>I Have Alot Of Functions Which I Can Do From Uploading Of Files Through Link To Telegram To Converting Files To Video, See /Help For More Information</b>\n\n<b><u>❌ 𝗣𝗢𝗥𝗡𝗢𝗚𝗥𝗔𝗣𝗛𝗜𝗖 𝗖𝗢𝗡𝗧𝗘𝗡𝗧𝗦</u> Are Strictly Prohibited & Will Get You Banned Permanently.</b>\n\n<b>𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 @FlixBots For More Exciting Bots</b>"""
+    START_TEXT = """<b>Hello, My Name Is TRIM FLIX BOT. 🥳</b>\n\n<b>I'm A <u>VIDEO TRIMMER & SCREENSHOT GENERATOR BOT</u></b>\n\n<b>Send Me Any Telegram Video/Document & Hit /downloadmedia First Before Trimming, See /Help For More Information</b>\n\n<b><u>❌ 𝗣𝗢𝗥𝗡𝗢𝗚𝗥𝗔𝗣𝗛𝗜𝗖 𝗖𝗢𝗡𝗧𝗘𝗡𝗧𝗦</u> Are Strictly Prohibited & Will Get You Banned Permanently.</b>\n\n<b>𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 @FlixBots For More Exciting Bots</b>"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = "No Charges Incurred, Join Our Channel >> <a href='https://t.me/Modzilla'>CHANNEL LINK</a>"
@@ -64,7 +64,7 @@ You can use /rename command after receiving file to rename it with custom thumbn
 Free users only 1 request per 30 minutes.
 /upgrade or Try 1800 seconds later."""
     SLOW_URL_DECED = "Gosh that seems to be a very slow URL. Since you were screwing my home, I am in no mood to download this file. Meanwhile, why don't you try this:==> https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    ABOUT_USER = """<b>○ My Name : 𝗠𝗨𝗟𝗧𝗜𝗣𝗨𝗥𝗣𝗢𝗦𝗘 𝗫 𝗕𝗢𝗧</b>
+    ABOUT_USER = """<b>○ My Name : TRIMMER FLIX BOT</b>
 <b>○ Creator :</b> <a href='https://t.me/iggie/'>Iggie</a>
 <b>○ Credits :</b> <code>Everyone in this journey</code>
 <b>○ Language :</b> <a href='https://docs.pyrogram.org/'>Python3</a>
