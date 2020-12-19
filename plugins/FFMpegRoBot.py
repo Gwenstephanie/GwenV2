@@ -39,7 +39,26 @@ async def ffmpegrobot_ad(bot, update):
             message_ids=update.message_id,
             revoke=True
         )
-        return
+    TRChatBase(update.from_user.id, update.text, "ffmpegrobot")
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 𝗠𝘆 <u>𝗖𝗵𝗮𝗻𝗻𝗲𝗹</u> 𝗕𝗲𝗹𝗼𝘄 𝗕𝗲𝗳𝗼𝗿𝗲 𝗨𝘀𝗶𝗻𝗴 𝗠𝗲 😇**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="📣 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 📣", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return
     TRChatBase(update.from_user.id, update.text, "ffmpegrobot")
     await bot.send_message(
         chat_id=update.chat.id,
@@ -57,7 +76,26 @@ async def trim(bot, update):
             message_ids=update.message_id,
             revoke=True
         )
-        return
+    TRChatBase(update.from_user.id, update.text, "trim")
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 𝗠𝘆 <u>𝗖𝗵𝗮𝗻𝗻𝗲𝗹</u> 𝗕𝗲𝗹𝗼𝘄 𝗕𝗲𝗳𝗼𝗿𝗲 𝗨𝘀𝗶𝗻𝗴 𝗠𝗲 😇**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="📣 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 📣", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return
     TRChatBase(update.from_user.id, update.text, "trim")
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if os.path.exists(saved_file_path):
@@ -173,7 +211,26 @@ async def storage_info(bot, update):
             message_ids=update.message_id,
             revoke=True
         )
-        return
+    TRChatBase(update.from_user.id, update.text, "storageinfo")
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 𝗠𝘆 <u>𝗖𝗵𝗮𝗻𝗻𝗲𝗹</u> 𝗕𝗲𝗹𝗼𝘄 𝗕𝗲𝗳𝗼𝗿𝗲 𝗨𝘀𝗶𝗻𝗴 𝗠𝗲 😇**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="📣 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 📣", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return
     TRChatBase(update.from_user.id, update.text, "storageinfo")
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if os.path.exists(saved_file_path):
@@ -223,7 +280,26 @@ async def download_media(bot, update):
             message_ids=update.message_id,
             revoke=True
         )
-        return
+    TRChatBase(update.from_user.id, update.text, "downloadmedia")
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 𝗠𝘆 <u>𝗖𝗵𝗮𝗻𝗻𝗲𝗹</u> 𝗕𝗲𝗹𝗼𝘄 𝗕𝗲𝗳𝗼𝗿𝗲 𝗨𝘀𝗶𝗻𝗴 𝗠𝗲 😇**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="📣 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 📣", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return
     TRChatBase(update.from_user.id, update.text, "downloadmedia")
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if not os.path.exists(saved_file_path):
