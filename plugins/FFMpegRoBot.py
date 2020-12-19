@@ -33,43 +33,6 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["ffmpegrobot"]))
-async def ffmpegrobot_ad(bot, update):
-    if update.from_user.id in Config.BANNED_USERS:
-        await bot.delete_messages(
-            chat_id=update.chat.id,
-            message_ids=update.message_id,
-            revoke=True
-        )
-    TRChatBase(update.from_user.id, update.text, "ffmpegrobot")
-    update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
-        try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
-               return
-        except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text="**𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 𝗠𝘆 <u>𝗖𝗵𝗮𝗻𝗻𝗲𝗹</u> 𝗕𝗲𝗹𝗼𝘄 𝗕𝗲𝗳𝗼𝗿𝗲 𝗨𝘀𝗶𝗻𝗴 𝗠𝗲 😇**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="📣 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 📣", url=f"https://t.me/{update_channel}")]
-              ])
-            )
-            return
-        except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
-            return
-    TRChatBase(update.from_user.id, update.text, "ffmpegrobot")
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.FF_MPEG_RO_BOT_AD_VER_TISE_MENT,
-        disable_web_page_preview=True,
-        reply_to_message_id=update.message_id
-    )
-
-
 @pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
 async def trim(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
@@ -254,7 +217,7 @@ async def storage_info(bot, update):
         )
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["clearffmpegmedia"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["clearmedia"]))
 async def clear_media(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
@@ -263,7 +226,7 @@ async def clear_media(bot, update):
             revoke=True
         )
         return
-    TRChatBase(update.from_user.id, update.text, "clearffmpegmedia")
+    TRChatBase(update.from_user.id, update.text, "clearmedia")
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if os.path.exists(saved_file_path):
         os.remove(saved_file_path)
