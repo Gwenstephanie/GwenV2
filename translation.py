@@ -1,5 +1,5 @@
 class Translation(object):
-    START_TEXT = """<b>Hello, My Name Is TRIM FLIX BOT. 🥳</b>\n\n<b>I'm A <u>VIDEO TRIMMER & SCREENSHOT GENERATOR BOT</u></b>\n\n<b>Send Me Any Telegram Video/Document & Hit /downloadmedia First Before Trimming, See /Help For More Information</b>\n\n<b><u>❌ 𝗣𝗢𝗥𝗡𝗢𝗚𝗥𝗔𝗣𝗛𝗜𝗖 𝗖𝗢𝗡𝗧𝗘𝗡𝗧𝗦</u> Are Strictly Prohibited & Will Get You Banned Permanently.</b>\n\n<b>𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 @FlixBots For More Exciting Bots</b>"""
+    START_TEXT = """<b>Hello, My Name Is TRIM FLIX BOT. 🥳</b>\n\n<b>I'm A <u>VIDEO TRIMMER & SCREENSHOT GENERATOR BOT</u></b>\n\n<b>Send Me Any Telegram Video/Document & See /Help For More Information On How To Use Bot</b>\n\n<b><u>❌ 𝗣𝗢𝗥𝗡𝗢𝗚𝗥𝗔𝗣𝗛𝗜𝗖 𝗖𝗢𝗡𝗧𝗘𝗡𝗧𝗦</u> Are Strictly Prohibited & Will Get You Banned Permanently.</b>\n\n<b>𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 @FlixBots For More Exciting Bots</b>"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = "No Charges Incurred, Join Our Channel >> <a href='https://t.me/Modzilla'>CHANNEL LINK</a>"
@@ -31,7 +31,6 @@ Expires on: {}"""
 
 <u>Trimming Telegram Videos</u>
 ➠ Send Me Any Telegram File Or Video.
-➠ Reply To That Message With /downloadmedia.
 ➠ Wait For It To Get Completed.
 ➠ Once Completed Send /trim [start time] [finish time]
 ➠ Example /trim 00:10:00 00:15:00
