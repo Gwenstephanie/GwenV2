@@ -225,7 +225,7 @@ async def clear_media(bot, update):
             message_ids=update.message_id,
             revoke=True
         )
-    TRChatBase(update.from_user.id, update.text, "clearmedia)
+    TRChatBase(update.from_user.id, update.text, "clearmedia")
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
         try:
