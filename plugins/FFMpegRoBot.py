@@ -46,7 +46,7 @@ async def run_subprocess(cmd):
 async def generate_thumbnail_file(file_path):
     output_folder = f'Thumbnails/'
     os.makedirs(output_folder, exist_ok=True)
-    thumb_file = output_folder.joinpath(f'thumb_{time.time()}.jpg')
+    thumb_file = f'Thumbnails/thumb_{time.time()}.jpg'
     ffmpeg_cmd = ['ffmpeg', '-ss', '0', '-i', file_path, '-vframes', '1', '-vf', 'scale=320:-1', '-y', str(thumb_file)]
     await run_subprocess(ffmpeg_cmd)
     if not os.path.exists(thumb_file):
