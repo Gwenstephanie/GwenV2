@@ -35,6 +35,7 @@ Expires on: {}"""
 ➠ Wait For It To Get Completed.
 ➠ Once Completed Send /trim [start time] [finish time]
 ➠ Example /trim 00:10:00 00:15:00
+➠ Use /clearmedia To Delete Files From Telegram Storage.
 
 <u>Generating Screenshots For TG Files</u>
 ➠ Reply /screenshot To To The Telegram File.
