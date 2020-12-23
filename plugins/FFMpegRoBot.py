@@ -56,9 +56,9 @@ async def generate_thumbnail_file(file_path):
 
 async def get_duration(file_path):
     path = os.path.normpath(file_path)
-    err, out = await run_subprocess(f'ffprobe -v error -show_entries format=duration -of csv=p=0:s=x -select_streams v:0 "{path}"')
+    stdout, stderr = await run_subprocess(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0:s=x', '-select_streams', 'v:0', path])
     try:
-        return int(float(out))
+        return int(float(stdout.decode(errors='ignore')))
     except ValueError:
         return 0
 
