@@ -54,6 +54,15 @@ async def generate_thumbnail_file(file_path):
     return thumb_file
 
 
+async def get_duration(file_path):
+    path = os.path.normpath(file_path)
+    err, out = await run_subprocess(f'ffprobe -v error -show_entries format=duration -of csv=p=0:s=x -select_streams v:0 "{path}"')
+    try:
+        return int(float(out))
+    except ValueError:
+        return 0
+
+
 @pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
 async def trim(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
@@ -103,17 +112,18 @@ async def trim(bot, update):
                     message_id=a.message_id
                 )
                 thumbnail = await generate_thumbnail_file(o)
+                duration = await get_duration(o)
                 c_time = time.time()
                 await bot.send_video(
                     chat_id=update.chat.id,
                     video=o,
+                    thumb=thumbnail,
+                    duration=duration,
+                    supports_streaming=True,
                     # caption=description,
-                    # duration=duration,
                     # width=width,
                     # height=height,
-                    supports_streaming=True,
                     # reply_markup=reply_markup,
-                    thumb=thumbnail,
                     reply_to_message_id=update.message_id,
                     progress=progress_for_pyrogram,
                     progress_args=(
