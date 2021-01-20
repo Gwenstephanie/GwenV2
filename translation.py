@@ -64,14 +64,7 @@ You can use /rename command after receiving file to rename it with custom thumbn
 Free users only 1 request per 30 minutes.
 /upgrade or Try 1800 seconds later."""
     SLOW_URL_DECED = "Gosh that seems to be a very slow URL. Since you were screwing my home, I am in no mood to download this file. Meanwhile, why don't you try this:==> https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    ABOUT_USER = """<b>○ My Name : 𝗠𝗨𝗟𝗧𝗜𝗣𝗨𝗥𝗣𝗢𝗦𝗘 𝗫 𝗕𝗢𝗧</b>
-<b>○ Creator :</b> <a href='https://t.me/iggie/'>Iggie</a>
-<b>○ Credits :</b> <code>Everyone in this journey</code>
-<b>○ Language :</b> <a href='https://docs.pyrogram.org/'>Python3</a>
-<b>○ Library :</b> <code>Pyrogram asyncio 0.16.1</code>
-<b>○ Source Code :</b> <a href='https://t.me/NOSOURCECODE/'>👉 CLICK HERE 👈</a>
-<b>○ Server :</b> <code>Heroku</code>
-<b>○ Build Status :</b> <code>V5 [+0.4]</code>"""
+    ABOUT_USER = """Owned By @ScifiMovies"""
     IFLONG_FILE_NAME = """File Name limit allowed by Telegram is {alimit} characters.
 The given file name has {num} characters.
 
