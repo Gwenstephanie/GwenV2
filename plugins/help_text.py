@@ -29,8 +29,7 @@ from translation import Translation
  
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
- 
-from helper_funcs.chat_base import TRChatBase
+
  
 def GetExpiryDate(chat_id):
     expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
@@ -41,7 +40,6 @@ def GetExpiryDate(chat_id):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["help"]))
 async def help_user(bot, update):
     # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/help")
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
@@ -65,7 +63,6 @@ async def help_user(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["me"]))
 async def get_me_info(bot, update):
     # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/me")
     chat_id = str(update.from_user.id)
     chat_id, plan_type, expires_at = GetExpiryDate(chat_id)
     await bot.send_message(
@@ -79,7 +76,6 @@ async def get_me_info(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/start")
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(update.from_user.first_name),
@@ -104,7 +100,6 @@ from sample_config import Config
  
 @pyrogram.Client.on_message(pyrogram.Filters.command(["ban"]))
 async def ban(bot, update):
- TRChatBase(update.from_user.id, update.text, "/ban")
  if len(update.command) == 1:
       await bot.send_message(
         chat_id=update.chat.id,
@@ -139,7 +134,6 @@ async def unban(bot, update):
   await bot.send_message(chat_id=update.chat.id, text="Hai **{}** 😡 there is no Id which should be banned. So use the format `/unban 1234` for banning the user".format(update.from_user.first_name), parse_mode="markdown")
  if len(update.command) == 2:
   unbanid = int(update.text.split(' ', 1)[1])
-  TRChatBase(update.from_user.id, update.text, "/unban")
   if update.from_user.id in Owner_id:
     if unbanid in Config.BANNED_USERS:
       await bot.send_message(
@@ -193,7 +187,6 @@ async def donate(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
 async def about(bot, update):
     # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/about")
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.ABOUT_USER,
