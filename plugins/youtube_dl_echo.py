@@ -32,7 +32,7 @@ from helper_funcs.help_uploadbot import DownLoadFile
 from pyrogram import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@pyrogram.Client.on_message(pyrogram.filters.regex(pattern=".*http.*"))
+@pyrogram.Client.on_message(pyrogram.Filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are B A N N E D 🤣🤣🤣🤣")
@@ -179,11 +179,11 @@ async def echo(bot, update):
                     "file", format_id, format_ext)
                 if format_string is not None and not "audio only" in format_string:
                     ikeyboard = [
-                        InlineKeyboardButton(
+                        pyrogram.InlineKeyboardButton(
                             "📹 " + " video " + format_string + " " + approx_file_size + " ",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
-                        InlineKeyboardButton(
+                        pyrogram.InlineKeyboardButton(
                             "📃 " + " file " + format_ext + " " + approx_file_size + " ",
                             callback_data=(cb_string_file).encode("UTF-8")
                         )
@@ -201,13 +201,13 @@ async def echo(bot, update):
                 else:
                     # special weird case :\
                     ikeyboard = [
-                        InlineKeyboardButton(
+                        pyrogram.InlineKeyboardButton(
                             "SVideo [" +
                             "] ( " +
                             approx_file_size + " )",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
-                        InlineKeyboardButton(
+                        pyrogram.InlineKeyboardButton(
                             "DFile [" +
                             "] ( " +
                             approx_file_size + " )",
@@ -220,9 +220,9 @@ async def echo(bot, update):
                 cb_string_128 = "{}|{}|{}".format("audio", "128k", "mp3")
                 cb_string = "{}|{}|{}".format("audio", "320k", "mp3")
                 inline_keyboard.append([
-                    InlineKeyboardButton(
+                    pyrogram.InlineKeyboardButton(
                         "🎧 MP3 " + "(" + "64 kbps" + ")", callback_data=cb_string_64.encode("UTF-8")),
-                    InlineKeyboardButton(
+                    pyrogram.InlineKeyboardButton(
                         "🎧 MP3 " + "(" + "128 kbps" + ")", callback_data=cb_string_128.encode("UTF-8"))
                 ])
                 inline_keyboard.append([
@@ -237,11 +237,11 @@ async def echo(bot, update):
             cb_string_video = "{}|{}|{}".format(
                 "video", format_id, format_ext)
             inline_keyboard.append([
-                InlineKeyboardButton(
+                pyrogram.InlineKeyboardButton(
                     "𝗦𝗧𝗥𝗘𝗔𝗠𝗔𝗕𝗟𝗘 📽️",
                     callback_data=(cb_string_video).encode("UTF-8")
                 ),
-                InlineKeyboardButton(
+                pyrogram.InlineKeyboardButton(
                     "𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧 📃",
                     callback_data=(cb_string_file).encode("UTF-8")
                 )
@@ -251,16 +251,16 @@ async def echo(bot, update):
             cb_string_video = "{}={}={}".format(
                 "video", format_id, format_ext)
             inline_keyboard.append([
-                InlineKeyboardButton(
+                pyrogram.InlineKeyboardButton(
                     "𝗩𝗜𝗗𝗘𝗢 🎬",
                     callback_data=(cb_string_video).encode("UTF-8")
                 ),
-                InlineKeyboardButton(
+                pyrogram.InlineKeyboardButton(
                     "𝗙𝗜𝗟𝗘 📄",
                     callback_data=(cb_string_file).encode("UTF-8")
                 )
             ])
-        reply_markup = InlineKeyboardMarkup(inline_keyboard)
+        reply_markup = pyrogram.InlineKeyboardMarkup(inline_keyboard)
         # logger.info(reply_markup)
         thumbnail = Config.DEF_THUMB_NAIL_VID_S
         thumbnail_image = Config.DEF_THUMB_NAIL_VID_S
@@ -298,16 +298,16 @@ async def echo(bot, update):
         cb_string_video = "{}={}={}".format(
             "video", "OFL", "ENON")
         inline_keyboard.append([
-            InlineKeyboardButton(
+            pyrogram.InlineKeyboardButton(
                 "SVideo",
                 callback_data=(cb_string_video).encode("UTF-8")
             ),
-            InlineKeyboardButton(
+            pyrogram.InlineKeyboardButton(
                 "DFile",
                 callback_data=(cb_string_file).encode("UTF-8")
             )
         ])
-        reply_markup = InlineKeyboardMarkup(inline_keyboard)
+        reply_markup = pyrogram.InlineKeyboardMarkup(inline_keyboard)
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.FORMAT_SELECTION.format(""),
