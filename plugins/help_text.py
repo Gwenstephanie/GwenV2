@@ -37,7 +37,7 @@ def GetExpiryDate(chat_id):
     return expires_at
  
  
-@pyrogram.Client.on_message(pyrogram.Filters.command(["help"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["help"]))
 async def help_user(bot, update):
     # logger.info(update)
     await bot.send_message(
@@ -60,7 +60,7 @@ async def help_user(bot, update):
     )
     return
  
-@pyrogram.Client.on_message(pyrogram.Filters.command(["me"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["me"]))
 async def get_me_info(bot, update):
     # logger.info(update)
     chat_id = str(update.from_user.id)
@@ -73,7 +73,7 @@ async def get_me_info(bot, update):
         reply_to_message_id=update.message_id
     )
  
-@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
     await bot.send_message(
@@ -98,7 +98,7 @@ Owner_id = [1314948019]
  
 from sample_config import Config
  
-@pyrogram.Client.on_message(pyrogram.Filters.command(["ban"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["ban"]))
 async def ban(bot, update):
  if len(update.command) == 1:
       await bot.send_message(
@@ -128,7 +128,7 @@ async def ban(bot, update):
  
 from sample_config import Config
  
-@pyrogram.Client.on_message(pyrogram.Filters.command(["unban"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["unban"]))
 async def unban(bot, update):
  if len(update.command) == 1:
   await bot.send_message(chat_id=update.chat.id, text="Hai **{}** 😡 there is no Id which should be banned. So use the format `/unban 1234` for banning the user".format(update.from_user.first_name), parse_mode="markdown")
@@ -169,7 +169,7 @@ async def unban(bot, update):
        )
       return False
     
-@pyrogram.Client.on_message(pyrogram.Filters.command(["donate"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["donate"]))
 async def donate(bot, update):
        await bot.send_message(
              chat_id=update.chat.id,
@@ -184,7 +184,7 @@ async def donate(bot, update):
           )
 
  
-@pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["about"]))
 async def about(bot, update):
     # logger.info(update)
     await bot.send_message(
