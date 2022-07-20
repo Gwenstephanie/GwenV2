@@ -97,14 +97,20 @@ async def ddl_call_back(bot, update):
                 update.message.message_id,
                 c_time
             )
-            return False
-        if os.path.exists(download_directory):
-            end_one = datetime.now()
+        except asyncio.TimeOutError:
             await bot.edit_message_text(
-                text=Translation.UPLOAD_START,
+                text=Translation.SLOW_URL_DECED,
                 chat_id=update.message.chat.id,
                 message_id=update.message.message_id
             )
+            return False
+    if os.path.exists(download_directory):
+        end_one = datetime.now()
+        await bot.edit_message_text(
+            text=Translation.UPLOAD_START,
+            chat_id=update.message.chat.id,
+            message_id=update.message.message_id
+        )
         file_size = Config.TG_MAX_FILE_SIZE + 1
         try:
             file_size = os.stat(download_directory).st_size
